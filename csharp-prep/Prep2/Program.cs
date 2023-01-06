@@ -9,24 +9,26 @@ class Program
         int Grade =  int.Parse(grade);
         
         string letter = "";
+        string symbol = "";
 
 
         if (Grade >= 90)
         {
             letter = "A";
+            
         }
 
-        if (Grade >= 80 && Grade <90)
+        else if (Grade >= 80 && Grade <90)
         {
             letter = "B";
         }
 
-        if (Grade >= 70 && Grade <80) 
+        else if (Grade >= 70 && Grade <80) 
         {
             letter = "C";
         }
 
-        if (Grade >= 60 && Grade <70) 
+        else if (Grade >= 60 && Grade <70) 
         {
             letter = "D";
         }
@@ -38,6 +40,16 @@ class Program
 
     
         Console.WriteLine ($"Your grade is {letter}");
+        if (Grade >= 70)
+        {
+            Console.WriteLine ("You passed!");
+        }
+
+        else
+        {
+            Console.WriteLine ("Sorry you failed!");
+        }
+
         
 
     }
