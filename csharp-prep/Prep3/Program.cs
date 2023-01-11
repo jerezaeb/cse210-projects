@@ -3,18 +3,14 @@ using System;
 class Program
 {
     static void Main(string[] args)
-    {   string game= "";
-        while (game == "yes")
-        {  
-        Console.WriteLine("Do you want to play? ");
-        game = Console.ReadLine();
+    { 
         
-            Random rnd = new Random();
-            int magicNumber =  rnd.Next(100);
-            int guess = 0;
+        Random rnd = new Random();
+        int magicNumber =  rnd.Next(100);
+        int guess = 0;
 
-            while (guess != magicNumber)
-            {
+        while (guess != magicNumber)
+        {
                 
                 Console.Write("What is your guess? ");
                 guess = int.Parse(Console.ReadLine());
@@ -31,7 +27,7 @@ class Program
                 {
                     Console.WriteLine ("You guessed it");
                 }
-            }
         }
+        
     }
 }
