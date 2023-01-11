@@ -9,8 +9,6 @@ class Program
         int Grade =  int.Parse(grade);
         
         string letter = "";
-        string symbol = "";
-
 
         if (Grade >= 90)
         {
