@@ -4,39 +4,40 @@ class Program
 {
     static void Main(string[] args)
     {
-        Journal journal = new Journal();
+        var journal = new Journal();
+        var promptGenerator = new PromptGenerator();
 
         while (true)
         {
-            Console.WriteLine("1. Add entry");
-            Console.WriteLine("2. Save journal");
-            Console.WriteLine("3. Load journal");
-            Console.WriteLine("4. Display journal entries");
+            Console.WriteLine("1. Write an entry");
+            Console.WriteLine("2. Save to file");
+            Console.WriteLine("3. Load from file");
+            Console.WriteLine("4. Display entries");
             Console.WriteLine("5. Exit");
 
-            int choice = int.Parse(Console.ReadLine());
+            var choice = Console.ReadLine();
 
             switch (choice)
             {
-                case 1:
-                    Console.Write("Enter your journal entry: ");
-                    string entry = Console.ReadLine();
-                    journal.AddEntry(entry);
+                case "1":
+                    Console.WriteLine(promptGenerator.GetRandomPrompt());
+                    var text = Console.ReadLine();
+                    journal.AddEntry(text);
                     break;
-                case 2:
-                    Console.Write("Enter file path to save journal: ");
-                    string filePath = Console.ReadLine();
-                    journal.Save(filePath);
+                case "2":
+                    Console.WriteLine("Enter file path:");
+                    var path = Console.ReadLine();
+                    journal.SaveToFile(path);
                     break;
-                case 3:
-                    Console.Write("Enter file path to load journal: ");
-                    filePath = Console.ReadLine();
-                    journal.Load(filePath);
+                case "3":
+                    Console.WriteLine("Enter file path:");
+                    path = Console.ReadLine();
+                    journal.LoadFromFile(path);
                     break;
-                case 4:
+                case "4":
                     journal.DisplayEntries();
                     break;
-                case 5:
+                case "5":
                     return;
             }
         }

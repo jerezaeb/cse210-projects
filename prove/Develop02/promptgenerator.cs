@@ -1,20 +1,18 @@
 using System;
-
-class Program
+class PromptGenerator
 {
-    static void Main(string[] args)
+    private List<string> prompts = new List<string>
     {
-        List<string> questions = new List<string>()
-        {
-            "Who was the most interesting person I interacted with today?",
-            "What was the best part of my day?",
-            "How did I see the hand of the Lord in my life today?",
-            "What was the strongest emotion I felt today?",
-            "If I had one thing I could do over today, what would it be?"
-        };
+        "What did you learn today?",
+        "What are you grateful for?",
+        "What are your goals for tomorrow?",
+        "What challenges did you face today?",
+        "What did you accomplish today?",
+    };
 
-        Random rnd = new Random();
-        int index = rnd.Next(questions.Count);
-        Console.WriteLine(questions[index]);
+    public string GetRandomPrompt()
+    {
+        var random = new Random();
+        return prompts[random.Next(prompts.Count)];
     }
 }
