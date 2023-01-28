@@ -1,32 +1,31 @@
 using System;
+
 class Journal
+
 {
-    private List<Entry> entries = new List<Entry>();
+    public List <Entry> _journalEntries = new List<Entry>();
 
-    public void AddEntry(string text)
+    public void AddEntry(string entries)
     {
-        var entry = new Entry(text, DateTime.Now);
-        entries.Add(entry);
+        var entry = new Entry (entries, DateTime.Now);
+        _journalEntries.Add(entry);
     }
 
-    public void LoadFromFile(string path)
+    public void LoadFromFile (string _fileName)
     {
-        entries = File.ReadAllLines(path)
-            .Select(x => new Entry(x, DateTime.Now))
-            .ToList();
+        _journalEntries = File.ReadAllLines(_fileName)
+           .Select(x => new Entry (x, DateTime.Now))
+           .ToList();
     }
-
-    public void SaveToFile(string path)
+    public void SaveToFile (string _fileName)
     {
-        File.WriteAllLines(path, entries.Select(x => x.Text));
+        File.WriteAllLines (_fileName, _journalEntries.Select (x=> x._writeEntry));
     }
 
     public void DisplayEntries()
     {
-        foreach (var entry in entries)
-        {
-            Console.WriteLine(entry.Text);
-            Console.WriteLine("Date: " + entry.Date);
-        }
+        foreach (var entry in _journalEntries)
+        Console.WriteLine (entry._writeEntry);
+        Console.WriteLine("Date: " + DateTime.Now);
     }
 }

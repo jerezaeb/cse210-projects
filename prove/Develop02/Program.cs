@@ -8,30 +8,31 @@ class Program
 
         while (true)
         {
-            Console.WriteLine("1. Write an entry");
-            Console.WriteLine("2. Save to file");
-            Console.WriteLine("3. Load from file");
-            Console.WriteLine("4. Display entries");
+            Console.WriteLine("1. Write");
+            Console.WriteLine("2. Save");
+            Console.WriteLine("3. Load");
+            Console.WriteLine("4. Display");
             Console.WriteLine("5. Exit");
+            Console.Write ("What do you want to do? Press the number: ");
 
             var choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
-                    Console.WriteLine(promptGenerator.GetRandomPrompt());
+                    Console.WriteLine(promptGenerator.RandomPromptGenerator());
                     var text = Console.ReadLine();
                     journal.AddEntry(text);
                     break;
                 case "2":
                     Console.WriteLine("Enter file path:");
-                    var path = Console.ReadLine();
-                    journal.SaveToFile(path);
+                    var fileName = Console.ReadLine();
+                    journal.SaveToFile(fileName);
                     break;
                 case "3":
                     Console.WriteLine("Enter file path:");
-                    path = Console.ReadLine();
-                    journal.LoadFromFile(path);
+                    fileName = Console.ReadLine();
+                    journal.LoadFromFile(fileName);
                     break;
                 case "4":
                     journal.DisplayEntries();

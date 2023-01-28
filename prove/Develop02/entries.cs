@@ -1,12 +1,14 @@
 using System;
 class Entry
 {
-    public string Text { get; set; }
-    public DateTime Date { get; set; }
+    public string _writeEntry {get; set;}
+    public DateTime _dateTime {get; set;}
 
-    public Entry(string text, DateTime date)
+    public Entry (string Text, DateTime Date)
     {
-        Text = text;
-        Date = date;
+        _writeEntry = Text;
+        _dateTime = Date;
+
+
     }
 }
