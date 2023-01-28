@@ -8,6 +8,7 @@ class Program
 
         while (true)
         {
+            Console.WriteLine();
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Save");
             Console.WriteLine("3. Load");
@@ -25,12 +26,12 @@ class Program
                     journal.AddEntry(text);
                     break;
                 case "2":
-                    Console.WriteLine("Enter file path:");
+                    Console.Write("Enter file path:");
                     var fileName = Console.ReadLine();
                     journal.SaveToFile(fileName);
                     break;
                 case "3":
-                    Console.WriteLine("Enter file path:");
+                    Console.Write("Enter file path:");
                     fileName = Console.ReadLine();
                     journal.LoadFromFile(fileName);
                     break;
