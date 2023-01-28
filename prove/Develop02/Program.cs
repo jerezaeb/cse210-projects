@@ -7,14 +7,17 @@ class Program
         var promptGenerator = new PromptGenerator();
 
         while (true)
-        {
+        {   
+            Console.ForegroundColor = ConsoleColor.Magenta;
             Console.WriteLine();
             Console.WriteLine("1. Write");
             Console.WriteLine("2. Save");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Display");
             Console.WriteLine("5. Exit");
-            Console.Write ("What do you want to do? Press the number: ");
+            Console.WriteLine();
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.Write ("What do you want to do? Press the number:  ");
 
             var choice = Console.ReadLine();
 
@@ -26,12 +29,14 @@ class Program
                     journal.AddEntry(text);
                     break;
                 case "2":
-                    Console.Write("Enter file path:");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("Enter file path: ");
                     var fileName = Console.ReadLine();
                     journal.SaveToFile(fileName);
                     break;
                 case "3":
-                    Console.Write("Enter file path:");
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.Write("Enter file path:  ");
                     fileName = Console.ReadLine();
                     journal.LoadFromFile(fileName);
                     break;
