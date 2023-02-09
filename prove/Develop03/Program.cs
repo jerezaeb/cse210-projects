@@ -1,9 +1,6 @@
+
 using System;
 
-class Program
+namespace ScriptureMemorizationProgram
 {
-    static void Main(string[] args)
-    {
-        Console.WriteLine("Hello Develop03 World!");
-    }
 }

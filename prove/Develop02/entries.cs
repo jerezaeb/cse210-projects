@@ -1,6 +1,6 @@
 using System;
 class Entry
-{
+{\
     public string _writeEntry {get; set;}
     public DateTime _dateTime {get; set;}
 
