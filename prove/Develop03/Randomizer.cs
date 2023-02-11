@@ -1,10 +1,10 @@
 using System;
 class Randomizer
     {
-        private Random random = new Random();
+        private static Random random = new Random();
 
-        public int GetRandomIndex(int count)
+        public int GetRandomIndex(int max)
         {
-            return random.Next(0, count);
+            return random.Next(max);
         }
     }

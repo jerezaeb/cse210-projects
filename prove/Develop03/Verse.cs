@@ -1,29 +1,32 @@
 using System;
-class VerseScripture
+class Verse
     {
-        private string scripture;
-        private List<string> words;
+        private string verse;
 
-        public VerseScripture(string scripture)
+        public void SetVerse(string verse)
         {
-            this.scripture = scripture;
-            words = new List<string>(scripture.Split(" "));
+            this.verse = verse;
         }
 
-        public string GetScripture()
+        public string[] GetWords()
         {
-            return scripture;
+            return verse.Split(' ');
         }
 
-        public List<string> GetWords()
+        public string MaskWords(string[] words)
         {
-            return words;
-        }
-
-        public void RemoveWord(int index)
-        {
-            string word = words[index];
-            words.RemoveAt(index);
-            scripture = scripture.Replace(word, new string('_', word.Length));
+            string maskedVerse = "";
+            foreach (string word in words)
+            {
+                if (word != "")
+                {
+                    maskedVerse += word + " ";
+                }
+                else
+                {
+                    maskedVerse += new string('_', word.Length) + " ";
+                }
+            }
+            return maskedVerse;
         }
     }
