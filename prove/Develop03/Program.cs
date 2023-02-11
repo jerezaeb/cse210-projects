@@ -8,32 +8,27 @@ namespace ScriptureMemorization
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Scripture Memory program!");
-            Console.WriteLine("Here is a list of available scriptures:");
+            Console.WriteLine("Scripture Memorization Program");
+            Console.WriteLine("=============================");
 
-            ScriptureReference scriptureReference = new ScriptureReference();
-            foreach (string verse in scriptureReference.Verses)
+            var reference = new ScriptureReference();
+            var randomizer = new Randomizer();
+            var verse = new Verse(reference.GetVerse());
+            string input;
+
+            do
             {
-                Console.WriteLine(verse);
-            }
+                Console.WriteLine(verse.ToString());
+                Console.WriteLine("Press Enter to remove a word or type 'quit' to exit the program.");
+                input = Console.ReadLine();
 
-            Console.WriteLine("\nPlease select a verse to memorize:");
-            string selectedVerse = Console.ReadLine();
+                if (input != "quit")
+                {
+                    verse.RemoveWord(randomizer.GetRandomWord(verse.Words));
+                }
+            } while (input != "quit" && verse.Words.Count > 0);
 
-            Console.WriteLine("\nMemorize the following verse:");
-            Verse verseToMemorize = new Verse(selectedVerse);
-            Randomizer randomizer = new Randomizer();
-
-            while (!verseToMemorize.AllWordsRemoved && !verseToMemorize.ShouldQuit)
-            {
-                Console.WriteLine(verseToMemorize.ToString());
-                Console.ReadLine();
-
-                verseToMemorize.RemoveWord(randomizer.NextWordIndex(verseToMemorize.Words.Count));
-            }
-
-            Console.WriteLine("\nYou have completed memorizing the verse.");
-            Console.WriteLine("The verse was: " + selectedVerse);
+            Console.WriteLine("Program finished. Goodbye!");
         }
     }
 }

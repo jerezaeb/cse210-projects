@@ -1,16 +1,17 @@
 using System;
 class ScriptureReference
- {
-        public List<string> Verses { get; set; }
-
-        public ScriptureReference()
+    {
+        private List<string> verses = new List<string>
         {
-            Verses = new List<string>()
-            {
-                "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
-                "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
-                "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
-                "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."
-            };
+            "Doctrine and Covenants 58:27 Verily I say, men should be aanxiously engaged in a good cause, and do many things of their own free will, and bring to pass much righteousness; 28 For the power is in them, wherein they are aagents unto themselves. And inasmuch as men do good they shall in nowise lose their breward.",
+            "Proverbs 3: 5 Trust in the Lord with all thine bheart; and lean not unto thine cown dunderstanding. 6 In all thy ways aacknowledge him, and he shall bdirect thy cpaths."
+        };
+
+       public string GetVerse()
+        {
+            var random = new Random();
+            var index = random.Next(0, verses.Count);
+
+            return verses[index];
         }
     }

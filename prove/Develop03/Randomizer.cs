@@ -1,10 +1,11 @@
 using System;
 class Randomizer
     {
-        private static readonly Random Random = new Random();
-
-        public int NextWordIndex(int maxValue)
+        public string GetRandomWord(List<string> words)
         {
-            return Random.Next(maxValue);
+            var random = new Random();
+            var index = random.Next(0, words.Count);
+
+            return words[index];
         }
     }
