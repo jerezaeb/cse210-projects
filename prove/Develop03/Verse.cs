@@ -1,32 +1,29 @@
 using System;
 class Verse
+    
     {
-        private string verse;
+        public string[] Words { get; set; }
+        public bool AllWordsRemoved { get; set; }
+        public bool ShouldQuit { get; set; }
 
-        public void SetVerse(string verse)
+        public Verse(string verse)
         {
-            this.verse = verse;
+            Words = verse.Split(' ');
+            AllWordsRemoved = false;
+            ShouldQuit = false;
         }
 
-        public string[] GetWords()
+        public void RemoveWord(int index)
         {
-            return verse.Split(' ');
-        }
-
-        public string MaskWords(string[] words)
-        {
-            string maskedVerse = "";
-            foreach (string word in words)
+            if (index >= 0 && index < Words.Length)
             {
-                if (word != "")
-                {
-                    maskedVerse += word + " ";
-                }
-                else
-                {
-                    maskedVerse += new string('_', word.Length) + " ";
-                }
+                Words[index] = string.Join("", Enumerable.Repeat("_", Words[index].Length));
+                AllWordsRemoved = !Words.Any(word => word != "_");
             }
-            return maskedVerse;
+        }
+
+        public override string ToString()
+        {
+            return string.Join(" ", Words);
         }
     }

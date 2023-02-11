@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ScriptureMemorization
 {
@@ -7,36 +8,32 @@ namespace ScriptureMemorization
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Welcome to the Scripture Memory program!");
+            Console.WriteLine("Here is a list of available scriptures:");
+
             ScriptureReference scriptureReference = new ScriptureReference();
+            foreach (string verse in scriptureReference.Verses)
+            {
+                Console.WriteLine(verse);
+            }
+
+            Console.WriteLine("\nPlease select a verse to memorize:");
+            string selectedVerse = Console.ReadLine();
+
+            Console.WriteLine("\nMemorize the following verse:");
+            Verse verseToMemorize = new Verse(selectedVerse);
             Randomizer randomizer = new Randomizer();
-            Verse verse = new Verse();
 
-            List<string> verses = scriptureReference.GetVerses();
-            Console.WriteLine("Select a verse to memorize:");
-            for (int i = 0; i < verses.Count; i++)
+            while (!verseToMemorize.AllWordsRemoved && !verseToMemorize.ShouldQuit)
             {
-                Console.WriteLine($"{i + 1}. {verses[i]}");
-            }
-            Console.Write("Enter your selection: ");
-            int selection = Convert.ToInt32(Console.ReadLine());
-            string selectedVerse = verses[selection - 1];
-            verse.SetVerse(selectedVerse);
-            string[] words = verse.GetWords();
-            string maskedVerse = verse.MaskWords(words);
+                Console.WriteLine(verseToMemorize.ToString());
+                Console.ReadLine();
 
-            while (maskedVerse.Contains("_"))
-            {
-                Console.WriteLine(maskedVerse);
-                Console.WriteLine("Press enter to remove a word or type 'quit' to stop:");
-                string input = Console.ReadLine();
-                if (input == "quit")
-                {
-                    break;
-                }
-                int index = randomizer.GetRandomIndex(words.Length);
-                words[index] = "";
-                maskedVerse = verse.MaskWords(words);
+                verseToMemorize.RemoveWord(randomizer.NextWordIndex(verseToMemorize.Words.Count));
             }
-            Console.WriteLine("Well done- you have memorized the scripture");
+
+            Console.WriteLine("\nYou have completed memorizing the verse.");
+            Console.WriteLine("The verse was: " + selectedVerse);
         }
     }
+}

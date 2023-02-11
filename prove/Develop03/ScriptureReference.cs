@@ -1,17 +1,16 @@
 using System;
-
 class ScriptureReference
-    {
-        private List<string> verses = new List<string>()
-        {
-            "Love the Lord your God with all your heart and with all your soul and with all your mind",
-            "Trust in the Lord with all your heart and lean not on your own understanding",
-            "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life",
-            "Blessed are the peacemakers, for they will be called children of God"
-        };
+ {
+        public List<string> Verses { get; set; }
 
-        public List<string> GetVerses()
+        public ScriptureReference()
         {
-            return verses;
+            Verses = new List<string>()
+            {
+                "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.",
+                "Trust in the Lord with all your heart and lean not on your own understanding; in all your ways submit to him, and he will make your paths straight.",
+                "Do not be anxious about anything, but in every situation, by prayer and petition, with thanksgiving, present your requests to God.",
+                "For I know the plans I have for you, declares the Lord, plans to prosper you and not to harm you, plans to give you hope and a future."
+            };
         }
     }
