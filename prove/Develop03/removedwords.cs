@@ -10,16 +10,21 @@ class ScriptureManager
             // Display the verse
             Console.WriteLine("Scripture Verse:\n" + verse.Text + "\n");
 
-            // Remove words
+            // Remove words randomly
+            Random rand = new Random();
             while (verse.Words.Length > 0)
             {
                 Console.WriteLine("Press Enter to remove a word...");
                 Console.ReadLine();
 
+                int index = rand.Next(verse.Words.Length);
                 string[] newWords = new string[verse.Words.Length - 1];
-                for (int i = 0; i < newWords.Length; i++)
+                for (int i = 0, j = 0; i < verse.Words.Length; i++)
                 {
-                    newWords[i] = verse.Words[i];
+                    if (i != index)
+                    {
+                        newWords[j++] = verse.Words[i];
+                    }
                 }
                 verse.Words = newWords;
 

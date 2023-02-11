@@ -1,4 +1,4 @@
-class Scripture
+ class Scripture
     {
         private string reference;
         private string text;
@@ -20,5 +20,4 @@ class Scripture
             get { return text; }
             set { text = value; }
         }
-        
     }
