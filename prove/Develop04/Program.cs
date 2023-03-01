@@ -52,7 +52,8 @@ class Program
         };
 
     int duration = 0;
-    
+    int thinkTime = 15;
+    p
         Console.WriteLine("Welcome to Mindfulness Activity. Please select what you would like to do?");
         Console.WriteLine("1. Breathing Activity");
         Console.WriteLine("2. Reflection Activity");
@@ -68,7 +69,7 @@ class Program
                     Activity activity1 = new Activity ((string) activityNameDesc [0,0], (string) activityNameDesc [0,1], duration);
                     activity1.GetBeginningMessagge ();
                     duration = activity1.GetDuration ();
-                    activity1.SetDuration = duration;
+                    activity1.setDuration = duration;
                     Console.Clear();
                     Console.WriteLine ("Get Ready!");
                     Breathing breathing = new Breathing ((string) activityNameDesc [0,0], (string) activityNameDesc [0,1], duration);
@@ -81,10 +82,10 @@ class Program
                     Activity activity2 = new Activity ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration);
                     activity2.GetBeginningMessagge ();
                     duration = activity2.GetDuration ();
-                    activity2.SetDuration = duration;
+                    activity2.setDuration = duration;
                     Console.Clear();
                     Console.WriteLine ("Get Ready!");
-                    Reflection reflection = new Reflection ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration);
+                    Reflection reflection = new Reflection ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, prompts, questions, thinkTime );
                     reflection.PrintReflection ();
                     Console.WriteLine (activity2.GetEndingMessage());
                     activity2.ShowAnimation(5);
@@ -94,10 +95,10 @@ class Program
                     Activity activity3 = new Activity ((string) activityNameDesc [2,0], (string) activityNameDesc [2,1], duration);
                     activity3.GetBeginningMessagge ();
                     duration = activity3.GetDuration ();
-                    activity3.SetDuration = duration;
+                    activity3.setDuration = duration;
                     Console.Clear();
                     Console.WriteLine ("Get Ready!");
-                    Listing listing = new Listing ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration);
+                    Listing listing = new Listing ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, prompts);
                     listing.PrintListing ();
                     Console.WriteLine (activity3.GetEndingMessage());
                     activity3.ShowAnimation(5);
