@@ -2,16 +2,16 @@ using System;
 public class Activity
 
 {
-private string _beginningMessage = " ";
+protected string _beginningMessage;
 
-private int _duration;
+protected int _duration;
 
-private string _activityName = "";
+protected string _activityName = "";
 
-public Activity (string beginningMessage, string activityName, int duration)
-    {
-        _beginningMessage = beginningMessage;
+public Activity (string activityName,string beginningMessage, int duration)
+    {  
         _activityName = activityName;
+        _beginningMessage = beginningMessage;
         _duration = duration;
     }
 
@@ -19,7 +19,9 @@ public int setDuration {set => _duration = value;}
 
 public void GetBeginningMessagge()
 {
-    Console.WriteLine  ("\n" + _beginningMessage);
+    Console.WriteLine  ($"Welcome to the {_activityName}");
+    Console.WriteLine ("\n" + _beginningMessage + "\n");
+
 
 }
 
@@ -30,11 +32,12 @@ public string GetEndingMessage ()
 
 public string WellDoneMessage ()
 {
-    return $"Well Done!";
+    Console.ForegroundColor = ConsoleColor.Yellow;
+    return $"Well Done!" ;
 }
 public int GetDuration()
 {
-Console.WriteLine ($" How long would you like for your session, in seconds?");
+Console.Write ($"How long would you like for your session, in seconds? ");
 string userDuration = Console.ReadLine ();
 
 if (int.TryParse (userDuration, out _duration))
@@ -54,8 +57,8 @@ else
 
 public void ShowAnimation (int period)
 {
-    currentTime = DateTime.Now;
-    endTime = DateTime.Now + _duration;
+    DateTime currentTime = DateTime.Now;
+    DateTime endTime = DateTime.Now.AddSeconds (period);
     DateTime startTime = DateTime.Now;
     while (currentTime < endTime)
 

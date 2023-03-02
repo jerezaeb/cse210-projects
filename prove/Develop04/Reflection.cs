@@ -32,11 +32,11 @@ public class Reflection : Activity
 
     public void PrintReflection () 
     {
-        Console.WriteLine ("Consider the following prompt: ");
-        Console.WriteLine ("{GetRamdomPrompt}");
-        Console.WriteLine ("When you have something in mind, press enter to continue");
+        Console.WriteLine ("\nConsider the following prompt: ");
+        Console.WriteLine ($"\n{GetRamdomPrompt()} \n");
+        Console.Write ("When you have something in mind, press enter to continue");
         Console.ReadLine();
-        Console.Write ("Now ponder on each of the following questions as they related to this experience. \n You may begin in: ");
+        Console.WriteLine ("\n Now ponder on each of the following questions as they related to this experience. \nYou may begin in: ");
         for (int i= 5; i>0; i--)
         {
             Console.Write (i);
@@ -44,9 +44,19 @@ public class Reflection : Activity
             Console.Write ("\b \b");
         }
         DateTime starTime = DateTime.Now;
-        DateTime endTime =starTime.AddSeconds (duration);
+        DateTime endTime =starTime.AddSeconds (_duration);
         DateTime currentTime = DateTime.Now;
         Console.Clear ();
 
-            }
+        while (currentTime < endTime)
+        {
+            Console.Write ("\n" + GetRandomQuestion() + "");
+            ShowAnimation (_thinkTime);
+            currentTime = DateTime.Now;
+        }
+        Console.WriteLine ("\n");
+        Console.WriteLine (WellDoneMessage());
+
+
+    }
 }

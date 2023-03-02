@@ -2,7 +2,7 @@ using System;
 
 public class Breathing : Activity
 {
-    public Breathing (string activityName, string beginningMessage, int duration) : base (activityName,beginningMessage,  duration)
+    public Breathing (string activityName, string beginningMessage, int duration) : base (activityName,beginningMessage, duration)
     {
     }
 
@@ -10,16 +10,16 @@ public class Breathing : Activity
     {        
             ShowAnimation(5);
             DateTime starTime = DateTime.Now;
-            DateTime endTime =starTime.AddSeconds (duration);
+            DateTime endTime = starTime.AddSeconds (_duration);
             DateTime currentTime = DateTime.Now;
-            while (currentTime < endTime) 
+            while (currentTime < endTime) {
             
                 ShowCounter ("in");
                 Console.WriteLine();
                 ShowCounter ("out");
-                Console.WriteLine();
+                Console.WriteLine("\n");
                 currentTime = DateTime.Now;
-            
+             }
             Console.WriteLine (WellDoneMessage());
             ShowAnimation (5);
 

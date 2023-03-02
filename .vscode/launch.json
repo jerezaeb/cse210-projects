@@ -173,18 +173,6 @@
         },
 
         {
-            "name": "Develop 04 Copy (Mindfulness)",
-            "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build-prove-Develop04",
-            "program": "${workspaceFolder}/prove/Develop04Copy/bin/Debug/net7.0/Develop04Copy.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}/prove/Develop04Copy",
-            "console": "integratedTerminal",
-            "internalConsoleOptions": "neverOpen",
-            "stopAtEntry": false
-        },
-        {
             "name": "Develop 05 (Goal Tracker)",
             "type": "coreclr",
             "request": "launch",

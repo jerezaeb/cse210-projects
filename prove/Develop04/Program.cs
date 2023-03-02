@@ -15,11 +15,11 @@ class Program
         object [,] activityNameDesc = new object [3,2]
         {
             {"Breathing Activity", "This activity will help you relax by walking your through breathing in and out slowly.Clear your mind and focus on your breathing."},
-            {"Reflection Activity" , "This activity will help you relax by walking your through breathing in and out slowly. Clear your mind and focus on your breathing."},
+            {"Reflection Activity" , "This activity will help you reflect on times in your life when you have shown strength and resilience. This will help you recognize the power you have and how you can use it in other aspects of your life."},
             {"Listing Activity" , "This activity will help you reflect on the good things in your life by having you list as many things as you can in a certain area."}
         };
 
-        List <string> reflectioPrompts = new List<string>
+        List <string> reflectionPrompts = new List<string>
 
         {
             "Think of a time when you stood up for someone else.",
@@ -52,54 +52,66 @@ class Program
         };
 
     int duration = 0;
-    int thinkTime = 15;
-    p
-        Console.WriteLine("Welcome to Mindfulness Activity. Please select what you would like to do?");
+    int thinkTime = 10;
+    
+        Console.WriteLine("\nWelcome to Mindfulness Activity. Please select what you would like to do?\n");
         Console.WriteLine("1. Breathing Activity");
         Console.WriteLine("2. Reflection Activity");
         Console.WriteLine("3. Listing Activity");
         Console.WriteLine("4. Quit");
-        Console.Write ("What do you want to do? Press the number:  ");
+        Console.Write ("\n \nWhat do you want to do? Press the number:  ");
         var choice = Console.ReadLine();
 
             switch (choice)
             {
                 case "1":
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Activity activity1 = new Activity ((string) activityNameDesc [0,0], (string) activityNameDesc [0,1], duration);
                     activity1.GetBeginningMessagge ();
-                    duration = activity1.GetDuration ();
+                    duration = activity1.GetDuration (); 
                     activity1.setDuration = duration;
                     Console.Clear();
-                    Console.WriteLine ("Get Ready!");
+                    Console.WriteLine ("Get Ready! \n", Console.ForegroundColor = ConsoleColor.Blue);
+                    Console.ResetColor();
                     Breathing breathing = new Breathing ((string) activityNameDesc [0,0], (string) activityNameDesc [0,1], duration);
                     breathing.PrintActivity ();
+                    Console.WriteLine ();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity1.GetEndingMessage());
                     activity1.ShowAnimation(5);
                     break;
                 case "2":
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Activity activity2 = new Activity ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration);
                     activity2.GetBeginningMessagge ();
                     duration = activity2.GetDuration ();
                     activity2.setDuration = duration;
                     Console.Clear();
-                    Console.WriteLine ("Get Ready!");
-                    Reflection reflection = new Reflection ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, prompts, questions, thinkTime );
+                    Console.WriteLine ("Get Ready!" , Console.ForegroundColor = ConsoleColor.Blue);
+                    Console.ResetColor();
+                    Reflection reflection = new Reflection ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, reflectionPrompts, reflectionQuestions, thinkTime );
                     reflection.PrintReflection ();
+                    Console.WriteLine ();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity2.GetEndingMessage());
                     activity2.ShowAnimation(5);
                     break;
                 case "3":
                     Console.Clear();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Activity activity3 = new Activity ((string) activityNameDesc [2,0], (string) activityNameDesc [2,1], duration);
                     activity3.GetBeginningMessagge ();
                     duration = activity3.GetDuration ();
                     activity3.setDuration = duration;
                     Console.Clear();
-                    Console.WriteLine ("Get Ready!");
-                    Listing listing = new Listing ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, prompts);
+                    Console.WriteLine ("Get Ready!" , Console.ForegroundColor = ConsoleColor.Blue);
+                    Console.ResetColor();
+                    Listing listing = new Listing ((string) activityNameDesc [1,0], (string) activityNameDesc [1,1], duration, listingPrompts);
                     listing.PrintListing ();
+                    Console.WriteLine ();
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity3.GetEndingMessage());
                     activity3.ShowAnimation(5);
                     break;
