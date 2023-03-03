@@ -53,7 +53,8 @@ class Program
 
     int duration = 0;
     int thinkTime = 10;
-    
+        while (true)
+        {
         Console.WriteLine("\nWelcome to Mindfulness Activity. Please select what you would like to do?\n");
         Console.WriteLine("1. Breathing Activity");
         Console.WriteLine("2. Reflection Activity");
@@ -80,6 +81,7 @@ class Program
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity1.GetEndingMessage());
                     activity1.ShowAnimation(5);
+                    Console.Clear();
                     break;
                 case "2":
                     Console.Clear();
@@ -97,6 +99,7 @@ class Program
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity2.GetEndingMessage());
                     activity2.ShowAnimation(5);
+                    Console.Clear();
                     break;
                 case "3":
                     Console.Clear();
@@ -114,11 +117,12 @@ class Program
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine (activity3.GetEndingMessage());
                     activity3.ShowAnimation(5);
+                    Console.Clear();
                     break;
                 case "4":
                     return;
             }
-        
+        }
 
     
     }

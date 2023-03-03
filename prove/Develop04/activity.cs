@@ -27,7 +27,7 @@ public void GetBeginningMessagge()
 
 public string GetEndingMessage ()
 {
-    return $"You have completed another {_duration} seconds of the {_activityName}";
+    return $"You just have completed another {_duration} seconds of the {_activityName}";
 }
 
 public string WellDoneMessage ()

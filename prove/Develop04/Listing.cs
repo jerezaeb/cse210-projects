@@ -20,7 +20,7 @@ public class Listing : Activity
  public void PrintListing () {
     Console.WriteLine ("\nList as many responses you can to the following prompt: \n");
     Console.WriteLine ($"{GetRamdomPrompt()}\n");
-    Console.Write ("You may begin in:");
+    Console.WriteLine ("\nYou may begin in:");
 
     for (int i= 5; i>0; i--)
         {

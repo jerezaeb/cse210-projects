@@ -36,7 +36,7 @@ public class Reflection : Activity
         Console.WriteLine ($"\n{GetRamdomPrompt()} \n");
         Console.Write ("When you have something in mind, press enter to continue");
         Console.ReadLine();
-        Console.WriteLine ("\n Now ponder on each of the following questions as they related to this experience. \nYou may begin in: ");
+        Console.WriteLine ("\nNow ponder on each of the following questions as they related to this experience. \nYou may begin in: ");
         for (int i= 5; i>0; i--)
         {
             Console.Write (i);
