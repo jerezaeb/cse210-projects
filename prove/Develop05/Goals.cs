@@ -1,14 +1,19 @@
 using System;
 public abstract class Goals
 {
-
-    private string _name {get; set;}
-    private string _description {get; set;}
+    // members
+    private string _name;
+    private string _description;
+    private bool _IsCompleted;
+    private int _points;
     
-    private bool _IsCompleted {get; set;}
-
-    private int _points  {get; set;}
-
+    // getters & setters
+    public string name {get => _name; set => _name=value;}
+    public string description {get => _description; set => _description=value;}
+    public bool IsCompleted {get => _IsCompleted; set => _IsCompleted=value;}
+    public int points {get => _points; set => _points=value;}
+    
+    // constructor
     public Goals (string name, string description, bool IsCompleted, int points)
 
     {
@@ -18,9 +23,10 @@ public abstract class Goals
         _points = points;
         
     }
-
+    
+    // methods 
+    public abstract bool IsComplete();
     public abstract int GetPoints();
-
     public abstract string GoalsToString();
 
 }

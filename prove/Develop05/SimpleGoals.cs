@@ -1,13 +1,21 @@
 public class SimpleGoals : Goals
 {
-    public SimpleGoals (string name, string description)
-    {
-        _name = name;
-        _description = description;
-    }
+    // constructor
+    public SimpleGoals (string name, string description, bool IsCompleted, int points)
+    : base(name, description, IsCompleted, points){}
 
+    // methods 
+
+    public override bool IsComplete()
+    {
+        throw new NotImplementedException();
+    }
     public override int GetPoints()
     {
-        return IsCompleted ? 10 :0;
+        if (IsCompleted) return points;
+        else return 0;
+    }
+    public override string GoalsToString(){
+        return $"SimpleGoal;{name};{description};{IsCompleted};{points}";
     }
 }

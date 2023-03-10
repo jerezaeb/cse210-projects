@@ -1,14 +1,24 @@
 public class ChecklistGoals : Goals
 {
+    // members
     private int _numTasks;
     private int _numberCompleted;
+    private int _bonus;
 
-    public ChecklistGoals (string name, string description, bool IsCompleted, int points, int numTasks, int numberCompleted) : base (name, description, IsCompleted, points )
+    // Constructor
+    public ChecklistGoals (string name, string description, bool IsCompleted, int points, int bonus, int numberCompleted, int numTasks)
+     : base (name, description, IsCompleted, points )
     {
         _numTasks = numTasks;
         _numberCompleted = numberCompleted;
+        _bonus = bonus;
     }
 
+    // methods 
+    public override bool IsComplete()
+    {
+        throw new NotImplementedException();
+    }
     public override int GetPoints()
     {
         int points = IsCompleted ? 20 : 0;
@@ -19,9 +29,8 @@ public class ChecklistGoals : Goals
     return points;
     }
 
-     public override string GoalsToString()
-    {
-        return "";
+     public override string GoalsToString(){
+        return $"CheckListGoal;{name};{description};{IsCompleted};{points};{_bonus};{_numberCompleted};{_numTasks}";
     }
 
     public void RecordEvent ()
