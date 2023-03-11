@@ -37,18 +37,14 @@ class Program
                     case 1:
                         SimpleGoals simpleGoal = new SimpleGoals(name, description, IsCompleted, points);
                         goals.Add(simpleGoal);
-                        // checking if it was actually created. Remove when thigns will work good
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("--- Testing goal creation: ---");
                         Console.WriteLine(simpleGoal.GoalsToString());
                         Console.ResetColor();
                         break;
                     case 2:
                         EternalGoals eternalGoal = new EternalGoals (name,description,IsCompleted, points);
                         goals.Add(eternalGoal);
-                        // checking if it was actually created. Remove when thigns will work good
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("--- Testing goal creation: ---");
                         Console.WriteLine(eternalGoal.GoalsToString());
                         Console.ResetColor();
                         break;
@@ -59,9 +55,7 @@ class Program
                         int bonus = int.Parse(Console.ReadLine());
                         ChecklistGoals checklistGoal = new ChecklistGoals (name, description, IsCompleted, points, bonus, 0, numTasks);
                         goals.Add(checklistGoal);
-                        // checking if it was actually created. Remove when thigns will work good
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("--- Testing goal creation: ---");
                         Console.WriteLine(checklistGoal.GoalsToString());   
                         Console.ResetColor();              
                         break;
