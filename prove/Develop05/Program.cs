@@ -93,7 +93,7 @@ class Program
                 // for testing purposes lets save goals to a file from here
                 Console.Write("Filename to save to: ");
                 string filename = Console.ReadLine();
-                using (StreamWriter sw = new StreamWriter(filename, false))
+                using (StreamWriter sw = new StreamWriter(filename, true))
                 {
                     sw.WriteLine($"Points: {totalPoints}");
                     foreach (Goals goal in goals)
@@ -110,7 +110,11 @@ class Program
                 filename = Console.ReadLine();
                 string[] goalsFile = File.ReadAllLines(filename);
                 // clearing Goals list so we don't append to exisitng list of goals
-                goals.Clear();
+                //goals.Clear();
+                Console.WriteLine("File content:");
+                foreach(string line in goalsFile){
+                Console.WriteLine(line);
+}
                 foreach(string line in goalsFile){
                     // splitting the line on separator (in our case it is ; )
                     string[] splitted = line.Split(";");
@@ -134,6 +138,39 @@ class Program
                 break;
             case 5:
                 //RecordEvent();
+
+                Console.WriteLine ("Enter the index of the goal you want to mark as completed (start from 0)");
+                int index = int.Parse (Console.ReadLine()) -1;
+                if (index < 0 || index >= goals.Count)
+                {
+                    Console.WriteLine ("Invalid goal index");
+                }
+                else
+                {Goals goal = goals [index];
+                    if (goal.IsCompleted)
+                    {
+                        Console.WriteLine("This goal is already completed!");
+                    }
+                    else
+                    {
+                        goal.IsCompleted = true;
+                        Console.WriteLine ($" {goal.name} is now completed");
+                        totalPoints = goal.points;
+                        if (goal is ChecklistGoals checklistGoals)
+                        {
+                            Console.WriteLine ($"Enter the number of completed tasks for goal '{checklistGoals.name}'': ");
+                            int completedTasks = int.Parse(Console.ReadLine());
+
+                            //checklistGoals.completeTasks == numTasks;
+
+                            //if (completedTasks = checklistGoals.numTasks)
+                            {
+                                totalPoints += checklistGoals.points;
+                            }
+                        }
+                    }
+                }
+
                 break;
             case 6:
                 return;
@@ -144,4 +181,5 @@ class Program
         Console.WriteLine ($"Total Points : {totalPoints}");
     }
 }
+//public void DisplayEntries
 }

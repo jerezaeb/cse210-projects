@@ -14,6 +14,6 @@ public class EternalGoals : Goals
         return points;
     }
     public override string GoalsToString(){
-       return $"EternalGoal;{name};{description};{IsCompleted};{points}";
+       return $"Eternal Goal: Name: {name}, Description: {description},  Completed: {IsCompleted}, Points: {points}";
     }
 }

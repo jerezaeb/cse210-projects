@@ -30,7 +30,7 @@ public class ChecklistGoals : Goals
     }
 
      public override string GoalsToString(){
-        return $"CheckListGoal;{name};{description};{IsCompleted};{points};{_bonus};{_numberCompleted};{_numTasks}";
+        return $"CheckList Goal: Name: {name}, Description: {description}, Completed:  {IsCompleted}, Points: {points},  Bonus: {_bonus}, Status: {_numberCompleted}/{_numTasks}";
     }
 
     public void RecordEvent ()

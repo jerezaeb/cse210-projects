@@ -16,6 +16,6 @@ public class SimpleGoals : Goals
         else return 0;
     }
     public override string GoalsToString(){
-        return $"SimpleGoal;{name};{description};{IsCompleted};{points}";
+        return $"Simple Goal: Name: {name}, Description: {description}, Completed: {IsCompleted}, Points: {points}";
     }
 }

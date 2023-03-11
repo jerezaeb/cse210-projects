@@ -1,0 +1,2 @@
+Points: 0
+Simple Goal: Name: sleep 8 hrs, Description: 8 hrs dails, Completed: False, Points: 50
