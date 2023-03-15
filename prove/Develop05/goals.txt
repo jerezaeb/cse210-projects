@@ -1,2 +1,4 @@
 Points: 0
 Simple Goal: Name: sleep 8 hrs, Description: 8 hrs dails, Completed: False, Points: 50
+Points: 0
+Simple Goal: Name: work on my assignment, Description: assignment CS210, Completed: False, Points: 50

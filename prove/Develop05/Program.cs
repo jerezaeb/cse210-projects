@@ -106,10 +106,13 @@ class Program
                 // clearing Goals list so we don't append to exisitng list of goals
                 //goals.Clear();
                 Console.WriteLine("File content:");
+                for (int i = 0; i < goalsFile.Length; i++)
+                {
+                    Console.WriteLine ($"{i+1}: {goalsFile [i]}");
+                }
                 foreach(string line in goalsFile){
-                Console.WriteLine(line);
-}
-                foreach(string line in goalsFile){
+                //Console.WriteLine(line);
+
                     // splitting the line on separator (in our case it is ; )
                     string[] splitted = line.Split(";");
                     // depending on the goal type create an object of goal and
