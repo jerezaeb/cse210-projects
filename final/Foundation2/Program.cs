@@ -6,7 +6,7 @@ class Program
     static void Main(string[] args)
     {
     Address address = new Address ("143 Gordon Place", "Beachtown", "CA", "USA");
-    Customer customer = new Customer ("Beverly Hills", address);
+    Customer customer = new Customer ("Beverly Smith", address);
     Product product1 = new Product ("Nature's Made Fish Oil", 0016782, 25, 1 );
     Product product2 = new Product ("Nature's Made Collagen Gummy", 0013456, 25, 2);
     Product [] products = {product1, product2};
@@ -14,8 +14,8 @@ class Program
 
 
     Address address1 = new Address ("14 Scarborough St", "Toronto", "ON", "CANADA");
-    Customer customer1 = new Customer ("Beverly Hills", address1);
-    Product product3 = new Product ("Nature's Made Liver Detox 60 Capsules", 0016782, 25, 1 );
+    Customer customer1 = new Customer ("Charles Parker", address1);
+    Product product3 = new Product ("Nature's Made Liver Detox 60 Cap", 0016782, 25, 1 );
     Product product4 = new Product ("Kirkland Vitamin D 2000 IU", 0013456, 25, 2);
     Product [] products1 = {product3, product4};
     Order order1 = new Order (customer1, products1);
@@ -31,7 +31,7 @@ class Program
     Console.WriteLine(order.GetShippingLabel());
     Console.WriteLine ();
 
-    Console.WriteLine ("\t ------------------------------ \n");
+    Console.WriteLine ("===========================================\n");
     Console.WriteLine ();
     Console.WriteLine("PACKING LABEL:\n");
     Console.WriteLine ("PRODUCTS: \n");
