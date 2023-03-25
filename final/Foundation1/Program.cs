@@ -45,7 +45,7 @@ public class Program
             Console.WriteLine ("Number of Comments: {0}", video.GetNumberOfComments());
             foreach (Comment _comment in video.Comments)
             {
-                Console.WriteLine ("Comment from {0}:{1}", _comment._commenterName, _comment._comment);
+                Console.WriteLine ("Comment from {0}:  \"{1}\"", _comment._commenterName, _comment._comment);
             }
             Console.WriteLine();
         }
