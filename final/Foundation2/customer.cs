@@ -11,7 +11,7 @@ public class Customer
 
     public string GetName()
     {
-        return _name;
+    return _name;
     }
 
     public Address GetAddress ()
