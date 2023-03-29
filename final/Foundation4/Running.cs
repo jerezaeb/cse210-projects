@@ -1,14 +1,14 @@
-
+using System;
 public class Running: Exercise
 {
     private int _distance;
 
-    public Running (string date, int duration, int distance): base (date, duration)
+    public Running (DateOnly date, int duration, int distance): base (date, duration)
     {
         _distance = distance;
     }
 
-    public override int GetDistance ()
+    public override float GetDistance ()
     {
         return _distance;
     }
@@ -19,14 +19,14 @@ public class Running: Exercise
         return  _distance / (duration / 60);
     }
 
-    public override float GetPace ()
+    public override float GetPace()
     {
-        return  (duration / _distance)/60;
+        return  (duration / 60) /_distance;
     }
 
     public override string GetSummary () 
     {
-        return $" Ran {_distance}km in {duration} "
+        return $" {date} Running ({duration}min) - Distance {_distance}km, Speed: {GetSpeed}Kmph, Pace: {GetPace}min per Km ";
     }
     
 }
