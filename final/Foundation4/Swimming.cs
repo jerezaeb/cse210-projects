@@ -14,15 +14,11 @@ public class Swimming: Exercise
 
     public override float GetSpeed ()
     {
-        return GetDistance()/(duration/60);
+        return (GetDistance()/duration) *60;
     }
-    public override float GetPace ()
-    {
-        return (duration / GetDistance()) / 60;
-    }
-
-    public override string GetSummary ()
-    {
-        return $" {date} Swimming ({duration}min) -Number Of Laps: {_numberOfLaps}km, Distance: {GetDistance} Speed: {GetSpeed}Kmph, Pace: {GetPace}min per Km ";
-    }
+    //public override float GetPace ()
+    //{
+    //    return duration/GetDistance();
+    //}
+   
 }

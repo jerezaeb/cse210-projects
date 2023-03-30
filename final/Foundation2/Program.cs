@@ -15,7 +15,7 @@ class Program
 
     Address address1 = new Address ("14 Scarborough St", "Toronto", "ON", "CANADA");
     Customer customer1 = new Customer ("Charles Parker", address1);
-    Product product3 = new Product ("Nature's Made Liver Detox 60 Cap", 0016782, 25, 1 );
+    Product product3 = new Product ("Nature's Made Liver Detox 60 Cap", 0016782, (float)25.50, 1 );
     Product product4 = new Product ("Kirkland Vitamin D 2000 IU", 0013456, 25, 2);
     Product [] products1 = {product3, product4};
     Order order1 = new Order (customer1, products1);
@@ -25,7 +25,7 @@ class Program
     Console.WriteLine("PACKING LABEL:\n");
     Console.WriteLine ("PRODUCTS: \n");
     Console.WriteLine($"{order.GetPackingLabel()}");
-    Console.WriteLine ($"Total Cost : $ {order.GetTotalCost()}");
+    Console.WriteLine ($"Total Cost : ${order.GetTotalCost():F2}");
     Console.WriteLine ();
     Console.WriteLine("SHIPPING LABEL: \n");
     Console.WriteLine(order.GetShippingLabel());
@@ -36,7 +36,7 @@ class Program
     Console.WriteLine("PACKING LABEL:\n");
     Console.WriteLine ("PRODUCTS: \n");
     Console.WriteLine($"{order1.GetPackingLabel()}");
-    Console.WriteLine ($"Total Cost : $ {order1.GetTotalCost()}");
+    Console.WriteLine ($"Total Cost : ${order1.GetTotalCost():F2}");
     Console.WriteLine ();
     Console.WriteLine("SHIPPING LABEL: \n");
     Console.WriteLine(order1.GetShippingLabel());

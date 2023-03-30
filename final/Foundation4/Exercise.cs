@@ -24,8 +24,14 @@ public abstract float GetDistance ();
 
 public abstract float GetSpeed ();
 
-public abstract float GetPace ();
+public float GetPace ()
+    {
+        return _duration/GetDistance();
+    }
 
-public abstract string GetSummary ();
+public  string GetSummary ()
+    {
+        return $"{date} Duration: ({duration} mins) - {GetDistance()}km, Speed: {GetSpeed()}kmph, Pace: {GetPace()}min per km ";
+    }
 
 }

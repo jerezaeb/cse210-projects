@@ -20,6 +20,6 @@ public class Address
 
     public string GetFullAddress()
     {
-        return $"{_street} \n \t {_city} {_state} {_country}";
+        return $"{_street} \n \t {_city}, {_state}, {_country}";
     }
 }

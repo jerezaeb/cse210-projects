@@ -8,25 +8,22 @@ public class Running: Exercise
         _distance = distance;
     }
 
-    public override float GetDistance ()
+    public override float GetDistance()
     {
         return _distance;
     }
 
-    public override float GetSpeed ()
+    public override float GetSpeed()
 
     {
-        return  _distance / (duration / 60);
+        return (GetDistance()/duration) *60;
     }
 
-    public override float GetPace()
-    {
-        return  (duration / 60) /_distance;
-    }
+    //public override float GetPace()
+    //{
+     //   return  duration / GetDistance();
+    //}
 
-    public override string GetSummary () 
-    {
-        return $" {date} Running ({duration}min) - Distance {_distance}km, Speed: {GetSpeed}Kmph, Pace: {GetPace}min per Km ";
-    }
+    
     
 }
