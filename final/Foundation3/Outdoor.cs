@@ -8,9 +8,7 @@ protected string _weather;
 public Outdoor (string eventTitle, string description, DateOnly date, TimeOnly time, string address, string weather) : base (eventTitle, description, date, time, address)
 {
     _weather = weather;
-  
 }
-
 
 public string GetFullDetails ()
 {

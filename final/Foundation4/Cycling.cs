@@ -8,8 +8,6 @@ public class Cycling: Exercise
         _speed = speed;
     }
 
-  
-
     public override float GetDistance ()
     {
         return _speed * (duration / 60);
@@ -18,11 +16,5 @@ public class Cycling: Exercise
     {
         return _speed;
     }
-
-    //public override float GetPace (){
-        //return 60 / GetSpeed();
-    //}
-
-    
 
 }

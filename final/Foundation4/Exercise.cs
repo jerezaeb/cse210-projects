@@ -31,7 +31,7 @@ public float GetPace ()
 
 public  string GetSummary ()
     {
-        return $"{date} Duration: ({duration} mins) - {GetDistance()}km, Speed: {GetSpeed()}kmph, Pace: {GetPace()}min per km ";
+        return $"{date} Duration: ({duration} mins) - Distance: {GetDistance()}km, Speed: {GetSpeed()}kmph, Pace: {GetPace()}min per km ";
     }
 
 }

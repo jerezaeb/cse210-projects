@@ -16,9 +16,5 @@ public class Swimming: Exercise
     {
         return (GetDistance()/duration) *60;
     }
-    //public override float GetPace ()
-    //{
-    //    return duration/GetDistance();
-    //}
-   
+
 }

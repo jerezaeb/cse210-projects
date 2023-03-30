@@ -11,7 +11,6 @@ public Reception (string eventTitle, string description, DateOnly date, TimeOnly
   
 }
 
-
 public string GetFullDetails ()
 {
     return $"\nEvent: {_eventTitle} \nEvent Description: {_description} \nDate: {_date} \nTime: {_time} \nAddress: {_address} \nRSVP: {_rsvpEmail} \n ";
